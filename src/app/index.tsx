@@ -1,4 +1,5 @@
 import Welcome from "@/components/atomo/welcome"
+import Steps from "@/components/molecula/steps"
 import { View , Text } from "react-native" 
 export default function index() {
   return (
@@ -7,6 +8,11 @@ export default function index() {
         title="Boas vindas ao Nearby!"
         desccription="Tenha cupons de vantagem para usar em seus estabelecimentos favoritos."
       />
+
+      <Steps
+        title_Steps="Veja como funciona:"
+      />
+
     </View>
   )
 }
