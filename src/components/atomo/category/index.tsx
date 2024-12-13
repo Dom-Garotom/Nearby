@@ -1,7 +1,7 @@
 import { colors } from '@/styles/colors'
 import { categoriesIcons } from '@/utils/categories-icons'
-import React, { useState } from 'react'
-import { GestureResponderEvent, Pressable, PressableProps, Text } from 'react-native'
+import React from 'react'
+import { Pressable, PressableProps, Text } from 'react-native'
 import { s } from './style'
 
 type Props = PressableProps & {
@@ -10,19 +10,13 @@ type Props = PressableProps & {
     isSelected?: boolean
 }
 
-export default function Category({ name, iconId, isSelected, onPress, ...props }: Props) {
-    const [selected, setSelected] = useState(isSelected)
+export default function Category({ name, iconId, isSelected, ...props }: Props) {
     const Icon = categoriesIcons[iconId];
 
-    const handleClick = (event: GestureResponderEvent) => {
-        setSelected(!selected)
-        onPress && onPress(event);
-    }
-
     return (
-        <Pressable style={selected ? s.wrapperSelected : s.wrapper} onPress={(event) => handleClick(event)} {...props}>
-            <Icon size={16} color={selected ? colors.gray[100] : colors.gray[500]} />
-            <Text style={[selected ? s.textSelected : s.text]}>{name}</Text>
+        <Pressable style={isSelected ? s.wrapperSelected : s.wrapper} {...props}>
+            <Icon size={16} color={isSelected ? colors.gray[100] : colors.gray[500]} />
+            <Text style={[isSelected ? s.textSelected : s.text]}>{name}</Text>
         </Pressable>
     )
 }
