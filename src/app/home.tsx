@@ -1,5 +1,7 @@
-import Categories, { CategoriesProps } from '@/components/molecula/categories'
+import Categories from '@/components/molecula/categories'
+import Places from '@/components/molecula/places'
 import { api } from '@/services/api'
+import { CategoriesProps } from '@/types/categories'
 import React, { useEffect, useState } from 'react'
 import { View } from 'react-native'
 
@@ -30,6 +32,7 @@ export default function Home() {
                 onSelected={setSelected}
                 selected={selected}
             />
+            <Places/>
         </View>
     )
 }

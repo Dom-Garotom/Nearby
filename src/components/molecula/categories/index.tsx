@@ -1,11 +1,7 @@
 import Category from '@/components/atomo/category'
+import { CategoriesProps } from '@/types/categories'
 import React from 'react'
 import { FlatList } from 'react-native'
-
-export type CategoriesProps = {
-  id: string,
-  name: string
-}[]
 
 type Props = {
   data: CategoriesProps,
