@@ -1,6 +1,7 @@
 import { Button } from "@/components/atomo/button"
 import Welcome from "@/components/atomo/welcome"
 import Steps from "@/components/molecula/steps"
+import { router } from "expo-router"
 import { View, Text } from "react-native"
 export default function index() {
   return (
@@ -14,7 +15,7 @@ export default function index() {
         title_Steps="Veja como funciona:"
       />
 
-      <Button>
+      <Button onPress={() => router.navigate("/home")}>
         <Button.Title>Começar</Button.Title>
       </Button>
 
