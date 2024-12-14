@@ -13,7 +13,7 @@ export function useFecth() {
         try {
             const { data } = await api.get("/categories");
             setCategoy(data);
-            setSelected(data[0].id)            
+            setSelected(data[0].id)
         } catch (error) {
             console.log(error);
         }
@@ -22,6 +22,10 @@ export function useFecth() {
 
     const fecthPlace = async () => {
         try {
+            if (!category) {
+                return;
+            }
+
             const { data } = await api.get("/markets/category/" + selected);
             setPlace(data);
         } catch (error) {
@@ -35,10 +39,10 @@ export function useFecth() {
 
     useEffect(() => {
         fecthPlace();
-    }, [category , selected])
+    }, [category, selected])
 
 
 
 
-    return { category , place , selected , setSelected }
+    return { category, place, selected, setSelected }
 }

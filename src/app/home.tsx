@@ -8,7 +8,7 @@ export default function Home() {
     const {category , place , selected , setSelected} = useFecth();
 
     return (
-        <View style={{ flex: 1, gap: 20, padding: 20 }}>
+        <View style={{ flex: 1, gap: 20, padding: 20 , backgroundColor: "#CECECE" }}>
             <Categories
                 data={category}
                 onSelected={setSelected}
