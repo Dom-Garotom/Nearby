@@ -6,3 +6,8 @@ export type PlaceProps ={
     cover: string,
     address: string
 }
+
+export type  MarketsProps = PlaceProps &{
+    latitude: number
+    longitude: number
+}

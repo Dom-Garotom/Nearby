@@ -1,11 +1,11 @@
 import { api } from "@/services/api";
 import { CategoriesProps } from "@/types/categories";
-import { PlaceProps } from "@/types/place";
+import { MarketsProps } from "@/types/place";
 import { useEffect, useState } from "react";
 
 export function useFecth() {
     const [category, setCategoy] = useState<CategoriesProps>([])
-    const [place, setPlace] = useState<PlaceProps[]>([])
+    const [place, setPlace] = useState<MarketsProps[]>([])
     const [selected, setSelected] = useState("")
 
 
