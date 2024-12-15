@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
     button:{
-        flex: 1 ,
         height: 56,
         maxHeight: 56,
         justifyContent: "center",
