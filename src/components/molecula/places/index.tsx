@@ -19,12 +19,13 @@ export default function Places({ data }: Props) {
 
   return (
     <BottomSheet
-      ref={bottomSheetRef}
       enableDynamicSizing={true}
-      snapPoints={[snapPoints.min, snapPoints.max]}
+      ref={bottomSheetRef}
+      snapPoints={[snapPoints.min, snapPoints.max ]}
       handleIndicatorStyle={s.indicator}
       backgroundStyle={s.container}
       enableOverDrag={false}
+      containerStyle={{zIndex:4}}
     >
       <BottomSheetFlatList
         data={data}
