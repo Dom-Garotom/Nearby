@@ -5,6 +5,7 @@ import Places from '@/components/molecula/places'
 import Categories from '@/components/molecula/categories'
 import MapView, { Callout, Marker } from 'react-native-maps'
 import { s } from './style'
+import { router } from 'expo-router'
 
 export default function Home() {
     const { category, place, selected, setSelected } = useFecth();
@@ -47,7 +48,7 @@ export default function Home() {
                         }}
                         image={require("@/assets/pin.png")}
                     >
-                        <Callout>
+                        <Callout onPress={() => router.navigate(`/market/${item.id}` as "/market/[id]")}>
                             <View>
                                 <Text style={s.name}>{item.name}</Text>
                                 <Text style={s.adress}>{item.address}</Text>

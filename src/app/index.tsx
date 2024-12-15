@@ -15,7 +15,7 @@ export default function index() {
         title_Steps="Veja como funciona:"
       />
 
-      <Button onPress={() => router.navigate("/home")}>
+      <Button onPress={() => router.navigate("/home/home")}>
         <Button.Title>Começar</Button.Title>
       </Button>
 
