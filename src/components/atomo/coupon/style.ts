@@ -2,7 +2,10 @@ import { StyleSheet } from "react-native"
 import { colors, fontFamily } from "@/styles/theme"
 
 export const s = StyleSheet.create({
-  container: {},
+  container: {
+    paddingHorizontal: 20,
+    marginVertical: 8,
+  },
   title: {
     color: colors.gray[500],
     fontFamily: fontFamily.medium,
