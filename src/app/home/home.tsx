@@ -49,7 +49,7 @@ export default function Home() {
                         image={require("@/assets/pin.png")}
                     >
                         <Callout onPress={() => router.navigate(`/market/${item.id}` as "/market/[id]")}>
-                            <View>
+                            <View style={{maxHeight: 100 , minHeight: 56}}>
                                 <Text style={s.name}>{item.name}</Text>
                                 <Text style={s.adress}>{item.address}</Text>
                             </View>
