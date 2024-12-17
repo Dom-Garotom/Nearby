@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 import { CameraView } from 'expo-camera'
 import { Modal } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 
 
 import { Button } from '@/components/atomo/button'
@@ -13,7 +13,7 @@ type Props = {
 }
 
 export default function CameraModal({ isVisibleCameraModal ,  onClose }: Props) {
-    const { CouponIsFetching, handleUseCoupon } = useCoupon()
+    const { CouponIsFetching, qrLock ,  handleUseCoupon } = useCoupon()
 
     return (
         <Modal style={{ flex: 1 }} visible={isVisibleCameraModal}>
@@ -21,9 +21,10 @@ export default function CameraModal({ isVisibleCameraModal ,  onClose }: Props) 
                 style={{ flex: 1 }}
                 facing='back'
                 onBarcodeScanned={({ data }) => {
-                    if (data) {
-                        // qrLock.current = true
+                    if (data && !qrLock.current) {
+                        qrLock.current = true
                         setTimeout(() => handleUseCoupon(data), 500)
+                        onClose(false);
                     }
                 }}
             />
